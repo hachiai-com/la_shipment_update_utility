@@ -67,7 +67,7 @@ class ShipmentUtility:
             try:
                 with open(config_path, 'r') as f:
                     cfg = json.load(f)
-                    logger.info(f"Config file contents: {json.dumps(cfg, indent=2)}")
+                    # logger.info(f"Config file contents: {json.dumps(cfg, indent=2)}")
                     
                     REGION = cfg.get('region', REGION)
                     SERVICE = cfg.get('service', SERVICE)
