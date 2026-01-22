@@ -1,0 +1,41 @@
+{
+  "slug": "la_shipment_update_utility",
+  "display_name": "LA Shipment Update Utility",
+  "description": "Processes shipment data from CSV files and updates shipments via API calls with AWS4 authentication.",
+  "version": "0.1.0",
+  "entrypoint": {
+    "type": "python",
+    "command": "python ShipmentUtility.py"
+  },
+  "capabilities": [
+    {
+      "name": "la_shipment_update",
+      "description": "Creates or updates shipments by processing CSV data and making API calls. Reads delivery appointment details from CSV and sends updates to shipment API.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "csv_path": {
+            "type": "string",
+            "description": "Absolute path to the CSV file containing shipment data with columns: id, po, delApptDate, delApptTime, delApptNo"
+          },
+          "type_operation": {
+            "type": "string",
+            "enum": ["create", "update"],
+            "description": "Type of operation to perform: create or update"
+          },
+          "output_path": {
+            "type": "string",
+            "description": "Absolute path to the output directory where results will be saved"
+          },
+          "config_path": {
+            "type": "string",
+            "description": "Optional absolute path to config.json file containing AWS credentials and API configuration"
+          }
+        },
+        "required": ["csv_path", "type_operation", "output_path", "config_path"]
+      }
+    }
+  ],
+  "author": "Ali Imran",
+  "tags": ["shipment", "update", "csv", "api", "aws", "logistics"]
+}
