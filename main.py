@@ -303,7 +303,7 @@ class ShipmentUtility:
                 reader = csv.reader(csvfile)
                 records = list(reader)
             
-            logger.info(f"CSV file contents: {json.dumps(records, indent=2)}")
+            # logger.info(f"CSV file contents: {json.dumps(records, indent=2)}")
             
             if len(records) <= 1:
                 logger.warning("No data rows found in CSV.")
@@ -445,7 +445,7 @@ def main():
                         "config_path": "/path/to/config.json (optional)"
                     }
                 },
-                "usage_cli": "python ShipmentUtility.py -source <input.csv> -type <type> -output <output_directory_path> [-config <config_path>]",
+                "usage_cli": "python main.py -source <input.csv> -type <type> -output <output_directory_path> [-config <config_path>]",
                 "capability": "unknown"
             }, indent=2))
             sys.exit(1)
