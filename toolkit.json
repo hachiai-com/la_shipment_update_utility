@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "entrypoint": {
     "type": "python",
-    "command": "python ShipmentUtility.py"
+    "command": "python main.py"
   },
   "capabilities": [
     {
